@@ -10,20 +10,21 @@ const filters = document.getElementsByClassName("filters");
 
 // Obtenemos los datos del local storage y los pintamos en la pantalla
 let tasks = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
+createHTML(tasks);
 
 // Ocultar filtros si no hay tareas
-if(tasks.length == 0) {
-    filters[0].style.opacity = "0";
-    const example = {
-        task: "Ejemlo de tarea",
-        id: Date.now(),
-        done: false
-    }
-    createHTML(example)
-} else {
-    filters[0].style.opacity = "1";
-    createHTML(tasks)
-}
+// if(tasks.length == 0) {
+//     filters[0].style.opacity = "0";
+//     const example = {
+//         task: "Ejemlo de tarea",
+//         id: Date.now(),
+//         done: false
+//     }
+//     createHTML(example)
+// } else {
+//     filters[0].style.opacity = "1";
+//     createHTML(tasks)
+// }
 
 // Función para agregar tarea
 function addTask() {
